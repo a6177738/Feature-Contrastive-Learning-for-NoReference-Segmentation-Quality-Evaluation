@@ -30,8 +30,8 @@ class SiamResNet(nn.Module):
                                   256,
                                   kernel_size=1)
         self.tmconv = nn.Conv2d(256,
-                                  1,
-                                  kernel_size=1)
+                                  256,
+                                  kernel_size=(320,320))
     def forward(self, x):
         pos, neg = x
         pos = self.features1(pos)
